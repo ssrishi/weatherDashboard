@@ -67,3 +67,8 @@ A high-performance, responsive weather application built with React, Vite, and T
    ```bash
    git clone https://github.com/ssrishi/weather-dashboard.git
    cd weather-dashboard
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
