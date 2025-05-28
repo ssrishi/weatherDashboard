@@ -85,15 +85,14 @@ A high-performance, responsive weather application built with React, Vite, and T
    # or
    yarn dev
 
-
-### Building For Production
+### **Building For Production**
    ```bash
    npm run build
    # or
    yarn build
 
 
-### 🗂️ Project Structure
+### **🗂️ Project Structure**
 ```bash
 weather-dashboard/
 ├── public/
@@ -118,7 +117,7 @@ weather-dashboard/
 ├── vite.config.js
 └── README.md
 
-### 🎯 Usage
+### **🎯 Usage**
 
 1. Enter a city in the search bar and press Enter or click Search.
 2. View current weather and five-day forecast.
@@ -126,14 +125,14 @@ weather-dashboard/
 4. Data will auto-refresh every 30 seconds.
 5. Return later to see the last city you searched automatically loaded.
 
-### ⚠️ Error Handling
+### **⚠️ Error Handling**
 Invalid city name: Displays “City not found. Please try again.”
 
 Network issues: Shows “Network error. Check your connection.”
 
 API failure: Retries using the fallback service, then alerts the user.
 
-### 🤝 Contributing
+### **🤝 Contributing**
 Fork this repository.
 
 Create a feature branch: git checkout -b feature/YourFeature.
