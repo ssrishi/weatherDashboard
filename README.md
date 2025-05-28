@@ -72,3 +72,78 @@ A high-performance, responsive weather application built with React, Vite, and T
    npm install
    # or
    yarn install
+
+###Configuration
+1. **Create a .env file in the project root (next to package.json):**
+   ```bash
+   VITE_OPENWEATHER_API_KEY=your_openweathermap_api_key
+2 **Ensure no quotes or trailing spaces in your keys.**
+
+###Running in Development
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+
+###Building For Production
+   ```bash
+   npm run build
+   # or
+   yarn build
+
+###🗂️ Project Structure
+```bash
+weather-dashboard/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   ├── ErrorMessage.jsx
+│   │   ├── Forecast.jsx
+│   │   ├── SearchBar.jsx
+│   │   └── WeatherInfo.jsx
+│   ├── context/
+│   │   └── WeatherContext.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── .env
+├── .gitignore
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+
+###🎯 Usage
+
+1. Enter a city in the search bar and press Enter or click Search.
+2. View current weather and five-day forecast.
+3. Toggle between °C and °F using the switch in the header.
+4. Data will auto-refresh every 30 seconds.
+5. Return later to see the last city you searched automatically loaded.
+
+###⚠️ Error Handling
+Invalid city name: Displays “City not found. Please try again.”
+
+Network issues: Shows “Network error. Check your connection.”
+
+API failure: Retries using the fallback service, then alerts the user.
+
+###🤝 Contributing
+Fork this repository.
+
+Create a feature branch: git checkout -b feature/YourFeature.
+
+Commit your changes: git commit -m 'Add YourFeature'.
+
+Push to your branch: git push origin feature/YourFeature.
+
+Open a Pull Request and describe your changes.
+
+Please follow the GitHub Flow and maintain code quality. All contributions are welcome!
+
+###📫 Contact
+Your Name • ssrishi17@gmail.com
+Project Link: https://github.com/ssrishi/weatherDashboard
