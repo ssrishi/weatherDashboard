@@ -16,20 +16,21 @@ export default function WeatherInfo() {
       <h2 className="text-3xl font-bold mb-4 text-primary">{name}</h2>
       <img src={iconUrl} alt={weather[0].description} className="mx-auto  w-24 mb-4" />
       <p className="capitalize text-xl mb-6 text-gray-600">{weather[0].description}</p>
-      <div className="grid grid-cols-3 gap-6 text-left">
-        <div>
-          <p className="text-xl uppercase text-gray-500">Temperature</p>
-          <p className="text-2xl font-semibold">{main.temp}{tempUnit}</p>
-        </div>
-        <div>
-          <p className="text-xl uppercase text-gray-500">Humidity</p>
-          <p className="text-2xl font-semibold">{main.humidity}%</p>
-        </div>
-        <div>
-          <p className="text-xl uppercase text-gray-500">Wind Speed</p>
-          <p className="text-2xl font-semibold">{wind.speed.toFixed(1)} {speedLabel}</p>
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div className="text-center sm:text-left">
+    <p className="text-xl uppercase text-gray-500">Temperature</p>
+    <p className="text-2xl font-semibold">{main.temp}{tempUnit}</p>
+  </div>
+  <div className="text-center sm:text-left">
+    <p className="text-xl uppercase text-gray-500">Humidity</p>
+    <p className="text-2xl font-semibold">{main.humidity}%</p>
+  </div>
+  <div className="text-center sm:text-left">
+    <p className="text-xl uppercase text-gray-500">Wind Speed</p>
+    <p className="text-2xl font-semibold">{wind.speed.toFixed(1)} {speedLabel}</p>
+  </div>
       </div>
+
       <p className="mt-6 text-xl text-gray-700">Last updated: {lastUpdated?.toLocaleTimeString()}</p>
     </div>
   );
