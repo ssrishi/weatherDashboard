@@ -18,25 +18,32 @@ export function WeatherProvider({ children }) {
     if (city) fetchWeather(city);
   };
 
-  const fetchWeatherOpen = async (name) => {
-    const params = new URLSearchParams({ q: name, units: unit, appid: import.meta.env.VITE_OPENWEATHER_API_KEY });
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?${params}`);
-    if (!res.ok) throw (await res.json()).message;
-    return res.json();
-  };
+const fetchWeatherOpen = async (name) => {
+  const isCoord = name.includes(',');
+  const [lat, lon] = name.split(',');
+  const query = isCoord ? { lat, lon } : { q: name };
+  const params = new URLSearchParams({ ...query, units: unit, appid: import.meta.env.VITE_OPENWEATHER_API_KEY });
+  const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?${params}`);
+  if (!res.ok) throw (await res.json()).message;
+  return res.json();
+};
 
-  const fetchForecastOpen = async (name) => {
-    const params = new URLSearchParams({ q: name, units: unit, appid: import.meta.env.VITE_OPENWEATHER_API_KEY });
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?${params}`);
-    if (!res.ok) throw (await res.json()).message;
-    const result = await res.json();
-    const days = {};
-    result.list.forEach(item => {
-      const day = item.dt_txt.split(' ')[0];
-      if (!days[day]) days[day] = item;
-    });
-    return Object.values(days).slice(0, 5);
-  };
+const fetchForecastOpen = async (name) => {
+  const isCoord = name.includes(',');
+  const [lat, lon] = name.split(',');
+  const query = isCoord ? { lat, lon } : { q: name };
+  const params = new URLSearchParams({ ...query, units: unit, appid: import.meta.env.VITE_OPENWEATHER_API_KEY });
+  const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?${params}`);
+  if (!res.ok) throw (await res.json()).message;
+  const result = await res.json();
+  const days = {};
+  result.list.forEach(item => {
+    const day = item.dt_txt.split(' ')[0];
+    if (!days[day]) days[day] = item;
+  });
+  return Object.values(days).slice(0, 5);
+};
+
 
   const fetchWeather = async (name) => {
     if (!name) return;
