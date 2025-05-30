@@ -30,7 +30,8 @@ A high-performance, responsive weather application built with React, Vite, and T
 
 ## ✨ Key Features
 
-- **City Search**: Look up any city worldwide.  
+- **City Search**: Look up any city worldwide.
+- **Get Current Location**: Get weather of your current location
 - **Current Conditions**: Displays temperature, humidity, wind speed, conditions, and weather icon.  
 - **5-Day Forecast**: Shows daily high/low forecasts with icons.  
 - **Unit Toggle**: Switch seamlessly between Celsius and Fahrenheit.  
